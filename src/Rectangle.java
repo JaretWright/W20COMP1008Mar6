@@ -11,7 +11,10 @@ public class Rectangle {
     }
 
     public void setLength(double length) {
-        this.length = length;
+        if (length>0)
+            this.length = length;
+        else
+            throw new IllegalArgumentException("length must be >0");
     }
 
     public double getWidth() {
@@ -19,6 +22,13 @@ public class Rectangle {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if (width > 0)
+            this.width = width;
+        else
+            throw new IllegalArgumentException("width must be >0");
+    }
+
+    public boolean isSquare() {
+        return length==width;
     }
 }

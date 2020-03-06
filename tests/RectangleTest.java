@@ -41,7 +41,7 @@ public class RectangleTest {
 
     @Test
     public void setWidth() {
-        rectangle.setLength(10);
+        rectangle.setWidth(10);
         assertEquals(10, rectangle.getWidth(), 0.0);
     }
 
@@ -76,5 +76,16 @@ public class RectangleTest {
         {
             System.out.println("properly caught invalid width in constructor: "+e.getMessage());
         }
+    }
+
+    @Test
+    public void isSquareTestFalse() {
+        assertEquals(false, rectangle.isSquare());
+    }
+
+    @Test
+    public void isSquareTestTrue() {
+        rectangle.setWidth(10);
+        assertEquals(true, rectangle.isSquare());
     }
 }
