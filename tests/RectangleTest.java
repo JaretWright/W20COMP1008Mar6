@@ -36,9 +36,23 @@ public class RectangleTest {
 
     @Test
     public void getWidth() {
+        assertEquals(20, rectangle.getWidth(),0.0);
     }
 
     @Test
     public void setWidth() {
+        rectangle.setLength(10);
+        assertEquals(10, rectangle.getWidth(), 0.0);
+    }
+
+    @Test
+    public void setWidthInvalid() {
+        try {
+            rectangle.setLength(-10);
+            fail("width must be positive");
+        }catch (IllegalArgumentException e)
+        {
+            System.out.println("properly caught invalid width: "+e.getMessage());
+        }
     }
 }
