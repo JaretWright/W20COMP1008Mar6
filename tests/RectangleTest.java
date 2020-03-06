@@ -55,4 +55,26 @@ public class RectangleTest {
             System.out.println("properly caught invalid width: "+e.getMessage());
         }
     }
+
+    @Test
+    public void ConstructorInvalidLength() {
+        try {
+            rectangle = new Rectangle(-1,20);
+            fail("constructor length needs positive value");
+        }catch (IllegalArgumentException e)
+        {
+            System.out.println("properly caught invalid length in constructor: "+e.getMessage());
+        }
+    }
+
+    @Test
+    public void ConstructorInvalidWidth() {
+        try {
+            rectangle = new Rectangle(10,-20);
+            fail("constructor width needs positive value");
+        }catch (IllegalArgumentException e)
+        {
+            System.out.println("properly caught invalid width in constructor: "+e.getMessage());
+        }
+    }
 }
