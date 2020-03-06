@@ -1,4 +1,4 @@
-public class Rectangle {
+public class Rectangle implements TwoDimensionalShape{
     private double length, width;
 
     public Rectangle(double length, double width) {
@@ -30,5 +30,9 @@ public class Rectangle {
 
     public boolean isSquare() {
         return length==width;
+    }
+
+    public double getArea() {
+        return length*width;
     }
 }

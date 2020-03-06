@@ -88,4 +88,9 @@ public class RectangleTest {
         rectangle.setWidth(10);
         assertEquals(true, rectangle.isSquare());
     }
+
+    @Test
+    public void getArea() {
+        assertEquals(200, rectangle.getArea(),0.0);
+    }
 }
